@@ -70,3 +70,4 @@ git log
 <meta name="description" content="Phoenix Ignition — A public rite of hydrogen rebirth, mythic choreography, and ceremonial artifacts.">
 <meta name="keywords" content="Phoenix Ignition, Ceremonial Packet, Sigils, Breath Score, Mythic Ritual, Public Flame, Hydrogen Rebirth">
 <meta name="author" content="James Stanley">
+
