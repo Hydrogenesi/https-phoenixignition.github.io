@@ -1,0 +1,32 @@
+# knot_phase.yaml
+#
+# ORIGIN: ORIGIN_CVN_ATUAM
+# CANON: 6.0
+# SCALE_BAND: network
+# CANON_RELATIONSHIP: compatible
+# CEREMONY: N/A
+# LINEAGE: root
+
+knot_phase:
+  sequence: [B, C, T, A, S]
+
+  B:
+    description: "Bind first pillar to Knot."
+    artifact: "TUA/operators/TUA-OP-001-bind-pillar-knot.md"
+
+  C:
+    description: "Cross-pillar binding; ensure dual-corridor contraction."
+    artifact: "TUA/operators/TUA-OP-002-cross-pillar-bind.md"
+
+  T:
+    description: "Triadic Closure; enforce 120° symmetry and maximum contraction."
+    verification_schema: "TUA/operators/TUA-OP-003-triadic-closure.md#verification-schema"
+    artifact: "TUA/operators/TUA-OP-003-triadic-closure.md"
+
+  A:
+    description: "Apex Knot; lock fixed point."
+    artifact: "TUA/operators/TUA-OP-004-apex-knot.md"
+
+  S:
+    description: "Stability Knot; enforce stability band."
+    artifact: "TUA/operators/TUA-OP-005-stability-knot.md"
