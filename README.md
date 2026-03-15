@@ -1,197 +1,127 @@
-# CVN · A_TUA_M
-## Single Sovereign Origin · Canon-Aligned · Quantumonix-Governed
+# Phoenix Ignition
 
-<!--
-ORIGIN: ORIGIN_CVN_ATUAM
-CANON: 6.0
-CEREMONY: N/A (root artifact)
-LINEAGE: root
--->
+**A public rite of hydrogen rebirth, mythic choreography, and ceremonial artifacts.**
 
-A_TUA_M in the CVN-Combat-Veterans-Network space is the **bridge repository** that unifies:
-
-- **TUA** — law, operator logic, tension mechanics
-- **Phoenix** — ceremony, archive, lineage, transformation
-- **ATUM_ATOM** — Canon 6.0 scaling laws and recursion-stable identity
-
-The result is a **single sovereign origin** with many expressions, all reversible, auditable, and anchored to Canon.
+Phoenix Ignition is a ceremonial web application built with Dash and Flask, featuring visualizations, glyphs, and interactive elements for ritual exploration.
 
 ---
 
-## 1. Sovereign Identity
-
-**ORIGIN_CVN_ATUAM** is the first cause of this repository.
-Every artifact must trace lineage back to this origin through:
-
-- **TUA law anchors**
-- **Canon 6.0 scaling anchors**
-- **Phoenix Quantumonix ceremony anchors**
-- **Operator references**
-
-Any artifact missing these anchors is **non-canonical** and must be reconciled or quarantined.
+## 🔥 Project Structure
 
 ```
-[ORIGIN_CVN_ATUAM]
-        |
-        v
-  [TUA Laws] ---\
-                 \
-                  --> [Phoenix Ceremonies] --> [Artifacts]
-                 /
-        [ATUM_ATOM Canon 6.0]
+phoenix_ignition/
+├── app.py                  # Your Dash or Flask app
+├── assets/                 # CSS, images, cue cards
+├── templates/              # HTML templates (if using Flask)
+├── README.md               # Ritual overview
+├── requirements.txt        # Python dependencies
+└── Procfile                # For Heroku deployment
 ```
 
 ---
 
-## 2. Repository Structure
+## 🛠️ Setup Instructions
 
+### 1. Create a Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
-/
-├── ORIGIN/                     # Origin object, sealed and immutable
-│   └── ORIGIN_CVN_ATUAM.md
-│
-├── CANON/                      # Canon 6.0 scaling anchors
-│   └── canon_6.0_reference.md
-│
-├── TUA/                        # Laws, operators, tension logic
-│   ├── laws/
-│   ├── operators/
-│   └── tension_cards/
-│
-├── PHOENIX/                    # Ceremonies, logs, lineage
-│   ├── ceremonies/
-│   ├── logs/
-│   └── badges/
-│
-├── MODULES/                    # Cue-cards, scripts, docs
-│   ├── cue_cards/
-│   ├── scripts/
-│   └── docs/
-│
-├── CVN/                        # Applied domain: protocols, training, governance
-│   ├── protocols/
-│   ├── onboarding/
-│   └── governance/
-│
-└── CONTRIBUTING.md
+
+### 2. Install Dependencies
+
+```bash
+pip install dash flask plotly pandas
+pip freeze > requirements.txt
+```
+
+### 3. Run the Application
+
+```bash
+python app.py
 ```
 
 ---
 
-## 3. Modular Interface
+## 📝 Application Code
 
-### Cue-Cards
-Small, atomic reference modules for:
+Create an `app.py` file with the following content:
 
-- Laws
-- Operators
-- Ceremonies
-- Patterns
+```python
+# app.py
+import dash
+from dash import html, dcc
+import plotly.express as px
+import pandas as pd
 
-Used for onboarding, quick lookup, and ceremony prompts.
+# Initialize the Dash app
+app = dash.Dash(__name__)
+server = app.server  # For deployment (e.g. Heroku)
 
-### Badges
-Machine-readable seals indicating:
+# Sample data for ceremonial visualization
+df = pd.DataFrame({
+    "Phase": ["Ignition", "Flight", "Return"],
+    "Energy": [88, 144, 72]
+})
 
-- Origin anchoring
-- Canon 6.0 compliance
-- Phoenix ceremony completion
-- Continuity verification
+fig = px.bar(df, x="Phase", y="Energy", title="Phoenix Calibration Curve")
 
-Badges are required for merges and releases.
+# Layout: insert glyphs, scores, and cue cards here
+app.layout = html.Div([
+    html.H1("Phoenix Package Activation", style={"textAlign": "center"}),
+    dcc.Graph(figure=fig),
+    html.Div([
+        html.P("Welcome conductor. This is your ignition interface."),
+        html.Ul([
+            html.Li("🜂 Insert: Torus"),
+            html.Li("🜁 Insert: Third Treasure"),
+            html.Li("🜃 Score: Feather"),
+            html.Li("🜄 Glyph: Echo")
+        ])
+    ], style={"marginTop": "20px"})
+])
 
-### Scripts
-Enforcement layer:
-
-- Pre-commit origin/canon checks
-- CI continuity validators
-- Ceremony runners for Quantumonix rituals
-
-Scripts turn ceremony into reproducible CLI workflows.
-
-### Docs
-Narrative Canon pages:
-
-- Design docs
-- Runbooks
-- Canon references
-- Ritual specifications
-
-Each doc is itself a canonical artifact with lineage metadata.
-
----
-
-## 4. Phoenix Quantumonix
-The ceremonial OS governing all change.
-
-**Phase 1 — Tension Surfacing**
-A tension card defines the need, gap, or transformation.
-
-**Phase 2 — Operator Selection**
-Operators chosen from TUA must satisfy Canon 6.0 scaling constraints.
-
-**Phase 3 — Ceremony Execution**
-Call → Witness → Transform → Seal.
-
-**Phase 4 — Archive & Broadcast**
-Logs, lineage, badges, cue-card updates.
-
-```
-[Tension] → [Operator Selection] → [Quantumonix Ceremony] → [Archive + Badges]
+# Run the server
+if __name__ == "__main__":
+    app.run_server(debug=True)
 ```
 
 ---
 
-## 5. Canon 6.0 Scaling Laws
-Every artifact declares:
+## 🌐 Deployment
 
-- **Scale band** (e.g., squad, unit, network)
-- **Canon relationship** (compatible, extended, forked)
-- **Operator constraints**
-
-No operator may violate scaling invariants.
-No ceremony may mutate beyond its declared scope.
+The application is deployed at: [https://phoenixignition.github.io](https://phoenixignition.github.io)
 
 ---
 
-## 6. Ceremonial Commons Licensing
-Remixing is allowed and encouraged, with obligations:
+## 🔥 Public Flame v1.0
 
-- Declare origin
-- Declare ceremony
-- Declare Canon relationship
-- Declare lineage
+The ceremonial ignition is now live. Explore the first public release of Phoenix Ignition—site, packet, and breath-timed artifacts.
 
-This ensures remixing is visible, honorable, and auditable.
+**[🔥 View the Public Flame v1.0 Release](https://github.com/phoenixignition/phoenixignition.github.io/releases/tag/v1.0)**
 
 ---
 
-## 7. Comparison to Prior Systems
+## 📋 Git Commands
 
-| Aspect | CVN A_TUA_M | Phoenix Archive | Hydrogenesi UNI_VERSE |
-|---|---|---|---|
-| Origin | Single sovereign | Multi-root | Mythic multi-origin |
-| Continuity | Scripted + badges | Archival | Narrative |
-| Ceremony | Quantumonix | Phoenix events | Mythic rites |
-| Scaling | Canon 6.0 | Partial | Cosmogenic |
-| Modularity | High | Medium | Low |
-| Remix lineage | Enforced | Informal | Narrative |
-| CI/ops | Strong | Medium | Low |
+Useful commands for managing the repository:
+
+```bash
+git status
+git log
+```
 
 ---
 
-## 8. Practical Implications
+## 📄 Metadata
 
-**For maintainers:**
-Every change is a ceremony. Continuity is enforced mechanically.
-
-**For contributors:**
-Cue-cards accelerate onboarding. Remix lineage is explicit.
-
-**For CVN:**
-Stable identity, scalable governance, and trauma-informed operator logic.
+- **Description**: Phoenix Ignition — A public rite of hydrogen rebirth, mythic choreography, and ceremonial artifacts.
+- **Keywords**: Phoenix Ignition, Ceremonial Packet, Sigils, Breath Score, Mythic Ritual, Public Flame, Hydrogen Rebirth
+- **Author**: James Stanley
 
 ---
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) to begin your first ceremony.
+## 📜 License
 
+This project is part of the Phoenix Ignition ceremonial framework.
